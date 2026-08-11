@@ -21,3 +21,4 @@ chrono = { version = "0.4.45", features = ["serde"] }
 sha2 = "0.11.0"
 bitcoin = "0.32.100"
 thiserror = "1.0"
+nalgebra = "0.33.0"

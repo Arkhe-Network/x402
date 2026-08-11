@@ -55,3 +55,4 @@ pub mod multi_chain {
 }
 pub mod substrato_4004;
 pub mod substrato_8000;
+pub mod inertia_certifier;

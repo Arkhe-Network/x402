@@ -1,0 +1,10 @@
+feat(quantum): Implement arkhe-quantum-auth crate with real PQC backends
+
+Implemented the `arkhe-quantum-auth` crate per the architecture specification with the following:
+- Real crypto implementations for Fast Path (`aes-gcm-siv`), Slow Path (X-Wing KEM via `pqcrypto-kyber` + `x25519-dalek`), and Post-Quantum signatures (`pqcrypto-dilithium` ML-DSA-65).
+- Derived KeyHierarchy via proper `hkdf-sha3`.
+- Added mock-capable integration tests verifying the full link establishment and line-rate AES-GCM-SIV Fast Path.
+- Setup conditional `ArkhePeaBridge` integration matching DataSovereigntyEnforcer and ConsentRegistry specifications.
+- Exact version pinning for `pqcrypto-*` crates.
+- Configured for `no_std` environments with allocators (`#![cfg_attr(not(feature = "std"), no_std)]`).
+- Integrated into `cathedral-arkhe` Cargo workspace.

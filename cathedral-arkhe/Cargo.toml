@@ -15,6 +15,7 @@ members = [
     "zk-circuits",
     "test-utils",
     "tests",
+    "arkhe-quantum-auth",
 ]
 
 [workspace.package]

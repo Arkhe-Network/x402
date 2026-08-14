@@ -7,6 +7,7 @@ edition.workspace = true
 name = "cathedral-bridge"
 path = "src/main.rs"
 [dependencies]
+tower-http = { version = "0.5", features = ["compression-full"] }
 arkhe-sdk = { path = "../sdk-rs", package = "cathedral-sdk" }
 arkhe-wormgraph = { path = "../wormgraph" }
 arkhe-nostr = { path = "../nostr-replicator" }

@@ -1,0 +1,45 @@
+CARGO := cargo
+
+default:
+	@just check
+	@just test
+
+check:
+	{{CARGO}} check --workspace --all-features
+
+lint:
+	{{CARGO}} clippy --workspace --all-features -- -D warnings -D clippy::pedantic
+
+test:
+	{{CARGO}} test --workspace --all-features -- --nocapture
+
+cov:
+	cargo llvm-cov --workspace --lcov --output-path lcov.info
+
+build:
+	{{CARGO}} build --workspace --release
+
+audit:
+	{{CARGO}} audit
+
+deny:
+	{{CARGO}} deny check
+
+fmt:
+	{{CARGO}} fmt --all
+
+graph:
+	cargo depgraph --workspace --dot | dot -Tpng > deps.png
+
+clean:
+	{{CARGO}} clean
+
+update:
+	{{CARGO}} update -w
+
+precommit:
+	@just fmt
+	@just lint
+	@just test
+	@just audit
+	@just deny

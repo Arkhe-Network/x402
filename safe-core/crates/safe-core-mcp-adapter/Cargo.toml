@@ -1,0 +1,24 @@
+[package]
+name = "safe-core-mcp-adapter"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+readme.workspace = true
+description = "Descrição sucinta do crate safe-core-mcp-adapter no SAFE-CORE OS"
+
+[dependencies]
+safe-core-core = { path = "../safe-core-core" }
+safe-core-identity = { path = "../safe-core-identity" }
+safe-core-pea = { path = "../safe-core-pea" }
+serde = { workspace = true }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+tracing = { workspace = true }
+chrono = { workspace = true }
+
+[dev-dependencies]
+mockall = { workspace = true }
+tempfile = { workspace = true }
+criterion = { workspace = true }
